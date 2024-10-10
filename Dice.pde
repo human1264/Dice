@@ -1,3 +1,4 @@
+public static int parseInt(String s) throws NumberFormatException
 dice test;
 dice replace;
 String list = "";
