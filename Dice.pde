@@ -1,27 +1,53 @@
 dice test;
+dice replace;
 void setup(){
 size(600,600);
 noLoop();
+background(0,0,0);
+
+for(int y = 0; y <= 400; y += 35)
+{
+  {
+    for(int x = 0; x <= 600; x += 40)
+    { 
+      int roll = (int)(Math.random()*6+1);
+      test = new dice(x,y,roll);
+      test.show();
+      
+    }
+  }
+}
 
 }
 
 
 
+
 void draw(){
-background(0,0,0);
+
 int sum = 0;
+if(mouseY > 410){
+background(0,0,0);
 for(int y = 0; y <= 400; y += 35)
 {
   {
     for(int x = 0; x <= 600; x += 40)
-    {
+    { 
       int roll = (int)(Math.random()*6+1);
       test = new dice(x,y,roll);
       test.show();
       sum+=roll;
     }
   }
-}
+} 
+} else if (mouseY <= 410) {
+
+int roll = (int)(Math.random()*6+1);
+replace = new dice(mouseX - (mouseX%40), mouseY - (mouseY%35), roll);
+replace.show();
+fill(0,0,0);
+quad(0,420,600,420,600,600,0,600);
+}else {}
 println(sum);
 fill(255,255,255);
 text("sum:" + sum,275,500);
