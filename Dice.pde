@@ -1,4 +1,3 @@
-public static int parseInt(String s) throws NumberFormatException
 dice test;
 dice replace;
 String list = "";
@@ -83,7 +82,7 @@ void mousePressed(){
    int num = above + before + 1;
    //find the value of that dice and converts to int
    String temp = list.substring(num-1, num);
-   ret = Integer.parseInt(temp);
+   ret = parseInt(temp);
    //subtract value of that dice from total
    sum -= ret;
     
